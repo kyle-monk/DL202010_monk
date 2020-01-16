@@ -60,20 +60,25 @@
 %=========== Body  ====================================
 \begin{document}
 
-\title{ELC 2137 Lab \#\#: Lab Title}
-\author{Put your name(s) here}
+\title{ELC 2137 Lab 01: Git and LaTeX Intro}
+\author{Kyle Monk}
 
 \maketitle
 
 
 \section*{Summary}
 
-Type the summary of your experiment and results here.  
+In this lab, several tasks were completed using TeXstudio in order to create a professional-looking document to submit as a lab report. Such tasks included making numbered lists, creating tables, inserting PNG files, labeling figures, and including Verilog code.  
 
 
 \section*{Q\&A}
 
-Answer questions posed in the lab assignment here.
+\begin{enumerate}
+	\item My GitHub user name is kyle-monk
+	\item itemize
+	\item $y(t) = \frac{1}{2}e^t$
+	\item F6
+\end{enumerate}
 
 
 \section*{Results}
@@ -95,11 +100,14 @@ Answer questions posed in the lab assignment here.
 	\caption{Table and simulation waveform to reproduce}
 \end{figure}
 
-
+\begin{figure}[ht]\centering
+	\includegraphics[width=0.8\textwidth]{lab1_screenshot.png}
+	\caption{GitHub Desktop Screenshot}
+	\end{figure}
 
 \section*{Code}
 
-Include all of the code you wrote or modified here.
+\Verilog[caption=Lab 1 Example Code,label=code:file_ex]{lab1_example_code.sv}
 
 
 \end{document}
