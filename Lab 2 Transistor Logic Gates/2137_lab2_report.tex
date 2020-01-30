@@ -1,0 +1,99 @@
+% Lab 2 Report
+% Created: 2020-01-29, Kyle Monk and Jane Ross
+
+%==========================================================
+%=========== Document Setup  ==============================
+
+% Formatting defined by class file
+\documentclass[11pt]{article}
+
+% ---- Document formatting ----
+\usepackage[margin=1in]{geometry}	% Narrower margins
+\usepackage{booktabs}				% Nice formatting of tables
+\usepackage{graphicx}				% Ability to include graphics
+
+%\setlength\parindent{0pt}	% Do not indent first line of paragraphs 
+\usepackage[parfill]{parskip}		% Line space b/w paragraphs
+%	parfill option prevents last line of pgrph from being fully justified
+
+% Parskip package adds too much space around titles, fix with this
+\RequirePackage{titlesec}
+\titlespacing\section{0pt}{8pt plus 4pt minus 2pt}{3pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{4pt plus 4pt minus 2pt}{-2pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{2pt plus 4pt minus 2pt}{-6pt plus 2pt minus 2pt}
+
+% ---- Hyperlinks ----
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}	% For URL's. Automatically links internal references.
+
+% ---- Code listings ----
+\usepackage{listings} 					% Nice code layout and inclusion
+\usepackage[usenames,dvipsnames]{xcolor}	% Colors (needs to be defined before using colors)
+
+% Define custom colors for listings
+\definecolor{listinggray}{gray}{0.98}		% Listings background color
+\definecolor{rulegray}{gray}{0.7}			% Listings rule/frame color
+
+% Style for Verilog
+\lstdefinestyle{Verilog}{
+	language=Verilog,					% Verilog
+	backgroundcolor=\color{listinggray},	% light gray background
+	rulecolor=\color{blue}, 			% blue frame lines
+	frame=tb,							% lines above & below
+	linewidth=\columnwidth, 			% set line width
+	basicstyle=\small\ttfamily,	% basic font style that is used for the code	
+	breaklines=true, 					% allow breaking across columns/pages
+	tabsize=3,							% set tab size
+	commentstyle=\color{gray},	% comments in italic 
+	stringstyle=\upshape,				% strings are printed in normal font
+	showspaces=false,					% don't underscore spaces
+}
+
+% How to use: \Verilog[listing_options]{file}
+\newcommand{\Verilog}[2][]{%
+	\lstinputlisting[style=Verilog,#1]{#2}
+}
+
+%======================================================
+%=========== Body  ====================================
+\begin{document}
+	
+	\title{ELC 2137 Lab 2: Transistor Logic Gates}
+	\author{Kyle Monk and Jane Ross}
+	\maketitle
+	
+	
+	\section*{Summary}
+	
+	In this lab, circuits were constructed to act as logic gates. To do this, several resistors and transistors were connected to switches and lights. Based on if the light was on or off, it was possible to determine the flow of current through the transistors and if the transistors were acting as "on" or "off". Transistors are "voltage-controlled switches", so they were on or off depending on whether or not there was current flowing through them. Diagrams were given as a guide on how to construct the three circuits in the lab. There were varying amounts of transistors and switches used in each circuit to create an inverter gate, a nor gate, and an and gate. 
+	
+	\section*{Questions}
+	
+	\begin{enumerate}
+		\item Logic/truth table for Final gate
+			\begin{figure}[ht]\centering
+					\begin{tabular}{c|c|c}
+						Switch 1 & Switch 2 & Light \\
+						\midrule
+						0 & 0 & 0 \\
+						0 & 1 & 0 \\
+						1 & 0 & 0 \\
+						1 & 1 & 1 \\
+						\bottomrule
+					\end{tabular} 
+				\end{figure}
+		\item This circuit implements an And gate because the light does not come on unless both switches are on.
+	\end{enumerate}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[page=1,width=\textwidth]{"lab 2 results"}
+		\label{fig:lab-2-results1}
+	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[page=2,width=\textwidth]{"lab 2 results"}
+		\caption{Circuit Demonstration Pages}
+		\label{fig:lab-2-results2}
+	\end{figure}
+\end{document}
